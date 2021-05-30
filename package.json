@@ -1,6 +1,6 @@
 {
   "name": "boilerplate_edu_souza",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,7 +16,7 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
     "generate:component": "yarn plop --plopfile ./generators/component/plopfile.js",
-    "commit": "git commit -a",
+    "commit": "git commit",
     "commit:all": "git add --all && git commit -a"
   },
   "lint-staged": {
