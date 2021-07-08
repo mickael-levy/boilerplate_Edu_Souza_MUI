@@ -9,6 +9,8 @@ import { Spacing } from "@material-ui/core/styles/createSpacing";
 import { Transitions } from "@material-ui/core/styles/transitions";
 import { Typography } from "@material-ui/core/styles/createTypography";
 import { ZIndex } from "@material-ui/core/styles/zIndex";
+import { MediaGenerator } from "styled-media-query";
+import * as polished from "polished";
 
 import "styled-components";
 
@@ -40,9 +42,26 @@ declare module "styled-components" {
       xxlarge: string;
     };
 
+    media: MediaGenerator<
+      {
+        xhuge: string;
+        huge: string;
+        large: string;
+        medium: string;
+        small: string;
+        xsmall: string;
+      },
+      this
+    >;
+
+    polished: typeof polished;
+
     gridLayout: {
       container: string;
       gutter: string;
+    };
+    border: {
+      radius: string;
     };
   }
 }
