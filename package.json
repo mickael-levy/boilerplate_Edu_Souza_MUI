@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint src --max-warnings=0",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
@@ -14,10 +15,13 @@
     "test:ci": "yarn test --bail --coverage",
     "test:watchFull": "yarn test --bail --coverage --findRelatedTests",
     "storybook": "start-storybook -s ./public -p 6006",
+    "storybook:cleancache": "start-storybook -s ./public -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook -s ./public",
     "generate:component": "yarn plop --plopfile ./generators/component/plopfile.js",
     "commit": "git commit",
-    "commit:all": "git add --all && git commit -a"
+    "commit:all": "git add --all && git commit -a",
+    "clean-install": "rm -rf node_modules/ && yarn cache clean && yarn install --pure-lockfile",
+    "upgrade:dep": "yarn upgrade-interactive --latest"
   },
   "lint-staged": {
     "src/**/*": [
