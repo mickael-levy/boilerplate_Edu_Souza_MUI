@@ -1,4 +1,6 @@
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { createTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { generateMedia } from "styled-media-query";
+import * as polished from "polished";
 
 const fontPoppins300 = {
   fontFamily: "Poppins",
@@ -43,7 +45,7 @@ const fontPoppins600 = {
 } as const;
 
 export default responsiveFontSizes(
-  createMuiTheme({
+  createTheme({
     gridLayout: {
       container: "130rem",
       gutter: "3.2rem",
@@ -93,7 +95,7 @@ export default responsiveFontSizes(
         main: "#2E2F42",
       },
       red: {
-        main: "#FF6347",
+        main: "#FF5F5F",
       },
     },
     spacings: {
@@ -116,20 +118,37 @@ export default responsiveFontSizes(
       values: {
         xs: 0,
         sm: 450,
-        md: 768,
+        md: 769,
         lg: 1170,
         xl: 1920,
       },
     },
+    media: generateMedia({
+      xhuge: "1920px",
+      huge: "1440px",
+      large: "1170px",
+      medium: "769px",
+      small: "450px",
+      xsmall: "350px",
+    }),
+    polished,
+    border: {
+      radius: "0.4rem",
+    },
     overrides: {
       MuiCssBaseline: {
         "@global": {
+          html: {
+            fontSize: "62.5%",
+          },
           button: {
             cursor: "pointer",
           },
           "@font-face": [fontPoppins300, fontPoppins400, fontPoppins600],
           body: {
             fontFamily: `"Poppins","Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "sans-serif"`,
+            fontSize: "1.6rem",
+            backgroundColor: "#06092B",
           },
           "*": {
             margin: 0,
