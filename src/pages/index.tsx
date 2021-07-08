@@ -1,9 +1,7 @@
-import TestPlop from "@/components/TestPlop";
-
-export default function Home() {
+export default function Index() {
   return (
     <>
-      <TestPlop />
+      <h1>Home</h1>
     </>
   );
 }
